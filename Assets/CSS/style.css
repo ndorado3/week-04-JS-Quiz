@@ -1,0 +1,56 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* /* html, */
+body,
+ {
+  height: 100%;
+  margin: 10;
+  padding: 0;
+} 
+
+/* Questions box style  */
+#questions-box {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 15px;
+  font-family: ;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px 40px;
+
+}
+
+
+/* Start Quiz button style*/
+.startQuiz-btn {
+  border: none;
+  background-color: rgb(152, 10, 165);
+  border-radius: 15px;
+  color: hsl(0, 0%, 100%);
+  display: center;
+  font-size: 13px;
+  margin: 16px 16px 16px 20px;
+  /* margin: auto; */
+  padding: 5px 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+  button[disabled] {
+  cursor: default;
+  background: #c0c7cf;
+}
