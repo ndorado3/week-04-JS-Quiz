@@ -1,49 +1,73 @@
 <!DOCTYPE <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My Awsome JS Quiz</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./Assets/CSS/style.css">
-    </head>
-    <body>
-    
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>My Awsome JS Quiz</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+  </head>
+  <body>
     <div id="wrapper">
-        <!-- div for Time -->
-        <div id="timer">Time: </div>
+      <!-- div for Time -->
+      <div id="timer">Time:</div>
 
-        <!-- div for score -->
-        <div id="viewScore">
-            <button id="startPageHighScore">View High Score</button>
+      <!-- div for score -->
+      <div id="viewScore">
+        <button id="startPageHighScore" onclick="showHighScore">
+          View High Score
+        </button>
+      </div>
+
+      <!-- div  Quiz code Information  -->
+      <div id="introBox">
+        <!-- instructions  -->
+        <h1>JavaScript Quiz Challenge</h1>
+        <p>
+          Try to asnwer the following JavaScript related questions within the
+          time limit. Keep in mind that the incorrect asnwer will penalize your
+          score/time by 10 seconds!
+        </p>
+        <!-- Start quiz button -->
+        <button class="startQuiz-btn" id="startBtn">Start Quiz</button>
+      </div>
+      <!-- div for the quiz        -->
+      <div id="quiz">
+        <div id="questions"><p></p></div>
+        <button id="a" onclick="checkAnswer('a')"></button>
+        <button id="b" onclick="checkAnswer('b')"></button>
+        <button id="c" onclick="checkAnswer('c')"></button>
+        <button id="d" onclick="checkAnswer('d')"></button>
+        <div id="result"></div>
+      </div>
+
+      <!-- Game Over container -->
+      <!-- I need to add the final score  -->
+      <div id="gameOver" class="hide">
+        <div id="finalScore">
+          <h2>All Done!</h2>
+          <p>Your final score is:</p>
         </div>
 
-       <!-- div  Quiz code Information  -->
-        <div id = "introBox">
-                
-                 <!-- instructions  -->
-                <h1>JavaScript Quiz Challenge</h1>
-                <p>Try to asnwer the following JavaScript related questions within the time limit.
-                   Keep in mind that the incorrect asnwer will penalize your score/time by 10 seconds! 
-                </p>
-                <!-- Start quiz button -->
-                <button class="startQuiz-btn" id="startBtn">Start Quiz</button>
-        </div>      
-                <!-- div for the quiz        -->
-         <div id="quiz">
-                    <div id="questions"><p></p></div>
-                    <button id="a" onclick="checkAnswer('a')"></button>
-                    <button id="b" onclick="checkAnswer('b')"></button>
-                    <button id="c" onclick="checkAnswer('c')"></button>
-                    <button id="d" onclick="checkAnswer('d')"></button>
-                    <div id="result"></div>
-        </div>
+        <form
+          name="scoreForm"
+          action="/action_page.php"
+          onsubmit="return validateForm()"
+          method="post"
+        >
+          Enter Initials: <input type="text" name="initials" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
 
+      <!-- High score div  -->
+      <div id="highScoreContainer">
+        <div id="highScoreCard"></div>
+      </div>
     </div>
-     
+
     <script src="./Assets/JS/script.js" async defer></script>
- </body>
-   
-</html> 
+  </body>
+</html>
