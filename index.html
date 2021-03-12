@@ -12,9 +12,17 @@
     <body>
     
     <div id="wrapper">
-        
+        <!-- div for Time -->
+        <div id="timer">Time: </div>
+
+        <!-- div for score -->
+        <div id="viewScore">
+            <button id="startPageHighScore">View High Score</button>
+        </div>
+
        <!-- div  Quiz code Information  -->
         <div id = "introBox">
+                
                  <!-- instructions  -->
                 <h1>JavaScript Quiz Challenge</h1>
                 <p>Try to asnwer the following JavaScript related questions within the time limit.
@@ -22,32 +30,20 @@
                 </p>
                 <!-- Start quiz button -->
                 <button class="startQuiz-btn" id="startBtn">Start Quiz</button>
-            </div>
-
-        <div id= "viewScore">
-            
-            <button id="startPageHighScore">View High Score</button>
-
-            </div>
-
-            <div id = "quiz">
-                <!-- div for Time -->
-                <div id="timer">Time:  </div>
+        </div>      
+                <!-- div for the quiz        -->
+         <div id="quiz">
                     <div id="questions"><p></p></div>
-                        <button id="a"></button>
-                        <button id="b"></button>
-                        <button id="c"></button>
-                        <button id="d"></button>
-                    <div id="result"></div>    
-            </div>
-           
-               
-                
+                    <button id="a" onclick="checkAnswer('a')"></button>
+                    <button id="b" onclick="checkAnswer('b')"></button>
+                    <button id="c" onclick="checkAnswer('c')"></button>
+                    <button id="d" onclick="checkAnswer('d')"></button>
+                    <div id="result"></div>
+        </div>
+
     </div>
      
-
-    
     <script src="./Assets/JS/script.js" async defer></script>
  </body>
    
-</html>
+</html> 
