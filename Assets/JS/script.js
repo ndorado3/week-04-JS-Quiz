@@ -87,6 +87,8 @@ function generateQuizQuestion() {
   quizDiv.style.display = "block";
 }
 
+ 
+
 //This function starts the timer, hides the infoBox, & displays the first question
 function startQuiz() {
   //It hides the info box
@@ -105,7 +107,29 @@ function startQuiz() {
     }
   }, 1000);
 }
+function showHighScore(){
+  
+  introPage.style.display = "none";
+  quizDiv.style.display = "none";
+  gameOverDiv.style.display = "none";
+  // highScoreContainer.style.display = "none";
+  highScoreContainer.style.display = "block";
+  
+}
 
+  function clearScore(){
+    window.localStorage.clear();
+    highscoreDisplayName.textContent = "";
+    highscoreDisplayScore.textContent = "";
+}
+
+function replayQuiz(){
+  highScoreContainer.style.display = "none";
+  gameOverDiv.style.display = "none";
+  quizDiv.style.display = "none";
+  introPage.style.display = "block";
+}
+  
 //This function checks the response for each answer
 function checkAnswer(answer) {
   correct = quizQuestions[currentQuestionIndex].rightAnswer;
@@ -146,8 +170,6 @@ function gameOver() {
 
 
 
-
-
   submitScoreBtn.addEventListener("click", highScore);
 
   function highScore() {
@@ -160,7 +182,7 @@ function gameOver() {
       var currentUser = initials.value.trim();
       var currentHighscore = {
         name: currentUser,
-        score: score
+        score: timeRemaining
       };
 
       gameOverDiv.style.display = "none";
@@ -186,26 +208,6 @@ function gameOver() {
       highscoreDisplayScore.appendChild(newScoreSpan);
     }
   }
-  function scoreClear(){
-    window.localStorage.clear();
-    // highscoreDisplayName.textContent = "";
-    // highscoreDisplayScore.textContent = "";
-}
-function showHighscore() {
-  startQuizDiv.style.display = "none"
-  gameoverDiv.style.display = "none";
-  highscoreContainer.style.display = "flex";
-  generateHighscores();
-
-}
-function replayQuiz(){
-  highscoreContainer.style.display = "none";
-  gameoverDiv.style.display = "none";
-  startQuizDiv.style.display = "flex";
-  timeLeft = 78;
-  score = 0;
-  currentQuestionIndex = 0;
-}
 
 }
 
