@@ -29,7 +29,8 @@ h1 {
 /* intro box & quiz style  */
 #introBox,
 #quiz,
-#gameOver {
+#gameOver,
+#highScoreContainer {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
@@ -42,7 +43,8 @@ h1 {
 }
 
 /* Start Quiz button style*/
-.startQuiz-btn {
+.startQuiz-btn,
+#submitScorebtn {
   display: flex;
   position: absolute;
   top: 50%;
@@ -82,5 +84,5 @@ h1 {
 
 /* view score btn style */
 #startPageHighScore {
-margin-left: 379px;
+  margin-left: 379px;
 }

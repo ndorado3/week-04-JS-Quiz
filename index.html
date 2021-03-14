@@ -16,7 +16,7 @@
 
       <!-- div for score -->
       <div id="viewScore">
-        <button id="startPageHighScore" onclick="showHighScore">
+        <button id="startPageHighScore" onclick="showHighScore()">
           View High Score
         </button>
       </div>
@@ -44,29 +44,29 @@
       </div>
 
       <!-- Game Over container -->
-      <!-- I need to add the final score  -->
       <div id="gameOver" class="hide">
-        <div id="finalScore">
-          <h2>All Done!</h2>
-          <p>Your final score is:</p>
-        </div>
-
-        <form
-          name="scoreForm"
-          action="/action_page.php"
-          onsubmit="return validateForm()"
-          method="post"
-        >
-          Enter Initials: <input type="text" name="initials" />
-          <input type="submit" value="Submit" />
-        </form>
+        <h2>All Done!</h2>
+        <div id="finalScore"></div>
+       <input id="initials" type="text" name="initials" placeholder="Enter your initials"/>
+       <button id="submitScorebtn" class="submit">Submit</button>  
       </div>
 
       <!-- High score div  -->
       <div id="highScoreContainer">
-        <div id="highScoreCard"></div>
-      </div>
-    </div>
+        <div id="highScoreCard">
+            <h1>Highscores</h1>
+          </div>
+  
+        <div id = "highscore-initials"></div>
+        <div id = "highscore-score"></div>
+       
+            <!-- Buttons -->
+            <button class="goBack" onclick="introPage">Go Back</button>
+            <button class="clear" onclick="clearScore()">Clear Highscore</button>
+          
+        </div>
+ 
+    
 
     <script src="./Assets/JS/script.js" async defer></script>
   </body>
